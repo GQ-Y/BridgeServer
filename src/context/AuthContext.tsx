@@ -13,7 +13,7 @@ export interface Agent {
   id: string;
   name: string;
   description: string;
-  category: 'Office' | 'Construction' | 'Maintenance' | 'Safety' | 'Value';
+  category: 'Supervision' | 'Information' | 'Maintenance';
   domain: 'Road' | 'Bridge' | 'Railway' | 'Municipal' | 'General';
   icon: string;
   status: 'active' | 'coming_soon';
@@ -44,36 +44,37 @@ export const MOCK_USER: User = {
 };
 
 export const AGENT_CATEGORIES = [
-  { id: 'Office', name: '智能办公', icon: 'Globe' },
-  { id: 'Construction', name: '智能建设', icon: 'Layers' },
-  { id: 'Maintenance', name: '智能养护', icon: 'Wrench' },
-  { id: 'Safety', name: '运营智能安全', icon: 'ShieldCheck' },
-  { id: 'Value', name: '路价值智能提升', icon: 'TrendingUp' },
+  { id: 'Supervision', name: '督查科', icon: 'ShieldCheck' },
+  { id: 'Information', name: '信息科', icon: 'Signal' },
+  { id: 'Maintenance', name: '维护科', icon: 'Wrench' },
 ] as const;
 
 export const MOCK_AGENTS: Agent[] = [
-  // Smart Office
-  { id: 'a1', name: '规章制度查询', description: '快速查询公司内部规章制度', category: 'Office', domain: 'General', icon: 'FileText', status: 'active' },
-  { id: 'a2', name: '文件检索', description: '全文检索项目文档', category: 'Office', domain: 'General', icon: 'Search', status: 'active' },
-  { id: 'a3', name: '公文办公', description: '辅助公文写作与审批', category: 'Office', domain: 'General', icon: 'PenTool', status: 'active' },
-  { id: 'a4', name: '智能问数', description: '数据报表智能分析', category: 'Office', domain: 'General', icon: 'BarChart', status: 'active' },
-  
-  // Smart Construction
-  { id: 'c1', name: '投资决策', description: '项目投资风险评估', category: 'Construction', domain: 'General', icon: 'PieChart', status: 'active' },
-  { id: 'c2', name: '安全质量管理', description: '施工现场安质环管控', category: 'Construction', domain: 'Municipal', icon: 'HardHat', status: 'active' },
+  // --- 督查科 (Supervision) ---
+  { id: 'sup1', name: '高风险企业画像', description: '基于历史监管数据生成企业信用画像', category: 'Supervision', domain: 'General', icon: 'UserCheck', status: 'active' },
+  { id: 'sup2', name: '申报资料校核', description: '校核申报数据与附件一致性', category: 'Supervision', domain: 'General', icon: 'FileCheck', status: 'active' },
+  { id: 'sup3', name: '项目全生命周期查询', description: '查询占挖项目全流程节点数据', category: 'Supervision', domain: 'General', icon: 'GitCommit', status: 'active' },
+  { id: 'sup4', name: '多维度统计分析', description: '占挖数据多维度对比统计', category: 'Supervision', domain: 'General', icon: 'BarChart2', status: 'active' },
+  { id: 'sup5', name: '设施撒点查询', description: '查询设施关联的占挖项目', category: 'Supervision', domain: 'Road', icon: 'MapPin', status: 'active' },
+  { id: 'sup6', name: '月报自动生成', description: '自动生成占挖监管月报', category: 'Supervision', domain: 'General', icon: 'FileText', status: 'active' },
+  { id: 'sup7', name: '费用管理', description: '占挖费用收支对比与漏洞分析', category: 'Supervision', domain: 'General', icon: 'DollarSign', status: 'active' },
+  { id: 'sup8', name: '费用预测分析', description: '预测经费调整及使用趋势', category: 'Supervision', domain: 'General', icon: 'TrendingUp', status: 'active' },
+  { id: 'sup9', name: '项目风险识别', description: '识别占挖项目潜在风险', category: 'Supervision', domain: 'General', icon: 'AlertOctagon', status: 'active' },
+  { id: 'sup10', name: '移交设施查询', description: '查询移交状态设施及关联项目', category: 'Supervision', domain: 'Road', icon: 'RefreshCw', status: 'active' },
+  { id: 'sup11', name: '证后巡查监管', description: '查询及预警项目巡查完成情况', category: 'Supervision', domain: 'General', icon: 'ClipboardCheck', status: 'active' },
 
-  // Smart Maintenance
-  { id: 'm1', name: '养护助手', description: '日常养护工作指引', category: 'Maintenance', domain: 'Road', icon: 'ClipboardList', status: 'active' },
-  { id: 'm2', name: '路面病害诊断', description: 'AI识别路面裂缝、坑槽', category: 'Maintenance', domain: 'Road', icon: 'Activity', status: 'active' },
-  { id: 'm3', name: '隧道病害诊断', description: '隧道渗漏水、衬砌裂缝分析', category: 'Maintenance', domain: 'Railway', icon: 'Maximize', status: 'active' },
+  // --- 信息科 (Information) ---
+  { id: 'inf1', name: '地震应急智能分析', description: '地震后快速评估桥梁状况', category: 'Information', domain: 'Bridge', icon: 'Activity', status: 'active' },
+  { id: 'inf2', name: '气象预报与指导', description: '局部气象预测与应急建议', category: 'Information', domain: 'General', icon: 'CloudRain', status: 'active' },
+  { id: 'inf3', name: '病害深度分析与审计', description: '多源数据融合分析与审计疑点发现', category: 'Information', domain: 'General', icon: 'Search', status: 'active' },
 
-  // Smart Safety
-  { id: 's1', name: '智能监测与预警', description: '实时监测结构安全', category: 'Safety', domain: 'Bridge', icon: 'AlertTriangle', status: 'active' },
-  { id: 's2', name: '应急响应与处理', description: '突发事件应急预案生成', category: 'Safety', domain: 'Road', icon: 'Siren', status: 'active' },
-
-  // Smart Value
-  { id: 'v1', name: '路域资源智能分析', description: '沿线资源开发价值评估', category: 'Value', domain: 'Road', icon: 'Map', status: 'coming_soon' },
-  { id: 'v2', name: '通道服务智能提升', description: '服务区服务质量优化建议', category: 'Value', domain: 'Road', icon: 'Coffee', status: 'coming_soon' },
+  // --- 维护科 (Maintenance) ---
+  { id: 'mnt1', name: '全生命周期档案', description: '一设施一档案数据视图', category: 'Maintenance', domain: 'General', icon: 'Folder', status: 'active' },
+  { id: 'mnt2', name: '病害投诉分析与考核', description: '投诉分类统计与维护考核', category: 'Maintenance', domain: 'General', icon: 'MessageCircle', status: 'active' },
+  { id: 'mnt3', name: '检测报告分析', description: '分析桥梁检测报告与病害变化', category: 'Maintenance', domain: 'Bridge', icon: 'FileSearch', status: 'active' },
+  { id: 'mnt4', name: '病害维护优先级', description: '智能排序病害处置优先级', category: 'Maintenance', domain: 'Road', icon: 'ListOrdered', status: 'active' },
+  { id: 'mnt5', name: '维护计划推荐', description: '辅助制定年度维护计划', category: 'Maintenance', domain: 'General', icon: 'Calendar', status: 'active' },
+  { id: 'mnt6', name: '多维度统计报表', description: '生成维护日报、月报、年报', category: 'Maintenance', domain: 'General', icon: 'PieChart', status: 'active' },
 ];
 
 // --- Auth Context ---
