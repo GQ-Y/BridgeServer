@@ -14,8 +14,11 @@ export default function HomePage() {
     e.preventDefault();
     if (!input.trim()) return;
     
-    // Create a general session
-    const sessionId = createSession('a1'); // Default to first agent or a general one
+    // Create a general session - defaulting to 'sup1' (High Risk Enterprise) as an entry point, 
+    // or we could create a specific 'general' agent. For now, let's use 'sup1' or just let it be generic.
+    // If we want a generic chat, we might need a 'general' agent in the list.
+    // Let's use 'sup4' (Multi-dimensional Statistics) as it's quite general.
+    const sessionId = createSession('sup4'); 
     await sendMessage(input);
     navigate('/chat');
   };
@@ -46,7 +49,7 @@ export default function HomePage() {
            </div>
         </div>
         <h1 className="text-4xl font-bold text-[#0056b3] mb-3 tracking-tight">交运天下 通达未来</h1>
-        <p className="text-slate-500 text-lg">您好，欢迎使用“路小通”高速公路领域大模型，您需要我做什么？</p>
+        <p className="text-slate-500 text-lg">您好，欢迎使用“路小通”成都道桥安全领域大模型，您需要我做什么？</p>
       </div>
 
       {/* Smart Agent Square */}
