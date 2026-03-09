@@ -41,8 +41,8 @@ export default function LoginPage() {
           <div className="mx-auto w-16 h-16 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center mb-4">
             <TrainFront className="w-8 h-8 text-white" />
           </div>
-          <h1 className="text-2xl font-bold mb-1">路小通</h1>
-          <p className="text-blue-100 text-sm">高速公路领域大模型助手平台</p>
+          <h1 className="text-2xl font-bold mb-1">路桥通</h1>
+          <p className="text-blue-100 text-sm">成都路桥AI大模型助手平台</p>
         </div>
 
         <div className="p-8">

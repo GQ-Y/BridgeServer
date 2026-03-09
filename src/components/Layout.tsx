@@ -30,7 +30,9 @@ export default function Layout({ children }: { children: ReactNode }) {
             <div className="w-8 h-8 bg-white/20 rounded-lg flex items-center justify-center backdrop-blur-sm">
               <Bot className="w-5 h-5 text-white" />
             </div>
-            <span className="text-lg font-bold tracking-wide">路小通</span>
+            <div>
+              <span className="text-lg font-bold tracking-wide leading-tight">路桥通</span>
+            </div>
           </div>
         </div>
 
@@ -74,9 +76,9 @@ export default function Layout({ children }: { children: ReactNode }) {
         <header className="h-16 bg-white flex items-center justify-between px-8 z-10">
           <div className="flex items-center">
              <h1 className="text-lg font-bold text-[#0056b3] flex items-center gap-3">
-                <span className="bg-[#0056b3] text-white text-xs px-2 py-1 rounded">中国中铁</span>
+                <span className="bg-[#0056b3] text-white text-xs px-2 py-1 rounded">路桥通</span>
                 <span className="text-slate-300">|</span>
-                <span className="text-slate-700 font-medium">成都道桥安全领域大模型</span>
+                <span className="text-slate-700 font-medium">成都路桥AI大模型助手平台</span>
              </h1>
           </div>
           
